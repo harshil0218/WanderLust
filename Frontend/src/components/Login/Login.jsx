@@ -2,16 +2,10 @@ import React from "react";
 function Login() {
   return (
     <div className="justify-center items-center content-center flex h-screen bg-gray-100 dark:bg-gray-900">
-        {/* <div className="grid ">
-            <img src='https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=600' 
-                  className="rounded-lg shadow-lg ratio-16/9 h-auto max-w-lg mx-auto" 
-                  alt="" 
-                  />
-        </div> */}
       <div className="w-full max-w-sm place-content-center content-center rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
         <form className="space-y-6" action="#">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-            Sign in 
+            Forgot 
           </h5>
           <div>
             <label
@@ -74,7 +68,7 @@ function Login() {
             type="submit"
             class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Login 
+            Login
           </button>
           <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
             Not registered?{" "}

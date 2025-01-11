@@ -1,5 +1,5 @@
 import React from 'react'
-import ChatBtn from './ChatBtn'
+import ChatBtn from './Chat/ChatBtn'
 import ThemeBtn from './ThemeBtn'
 import Search from './Search'
 import Logo from './Logo'

@@ -1,7 +1,7 @@
 import React from "react";
-import chatIconLight from "../../assets/chat1.svg";
-import chatIconDark from "../../assets/chat2.svg";
-import useTheme from "../../context/theme";
+import chatIconLight from "../../../assets/chat1.svg";
+import chatIconDark from '../../../assets/chat2.svg';
+import useTheme from "../../../context/theme";
 function ChatBtn({ messageCount }) {
   const { themeMode } = useTheme();
   const isDark = themeMode === "dark";
