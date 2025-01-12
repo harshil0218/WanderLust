@@ -315,7 +315,7 @@ function AddPost() {
           {/* Post Input */}
           <div className="w-full">
             <textarea
-              placeholder="What's on your mind?"
+              placeholder="What's your next trip?"
               value={postContent}
               onChange={(e) => setPostContent(e.target.value)}
               className="w-full h-20 resize-none rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"

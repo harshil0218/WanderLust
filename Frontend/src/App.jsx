@@ -2,9 +2,10 @@ import { useState, useEffect, React } from "react";
 import ThemeBtn from "./components/Header/ThemeBtn";
 import { ThemeProvider } from "./context/theme";
 import "regenerator-runtime/runtime";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Chat from "./components/Header/Chat/Chat";
 import Profile from "./components/profile/Profile";
-import { Post, Signup,Login, OtpBox ,Forgot,ResetPassword, AddPost} from "./components";
+import { Post, Signup,Login, OtpBox ,Forgot,ResetPassword, AddPost,SideMenu} from "./components";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,11 +22,16 @@ function App() {
     setThemeMode("dark");
   };
 
+  const queryClient = new QueryClient()
   return (
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
-       <ThemeBtn />
-      {/*<Profile /> */}
-      <AddPost/>
+      <QueryClientProvider client={queryClient}>
+      <ThemeBtn />
+      <ResetPassword /> {/* Your SignUp component */}
+    </QueryClientProvider>
+       
+      
+     
     </ThemeProvider>
   );
 }
