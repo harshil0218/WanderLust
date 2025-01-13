@@ -1,10 +1,12 @@
 import React from "react";
 import SendIcon from "@mui/icons-material/Send";
-function AddComment() {
+function AddComment({userId,userProfile}) {
   return (
     <>
       <div className="flex items-center space-x-3">
-        <div className="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-full dark:bg-gray-700"></div>
+        <div className="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-full dark:bg-gray-700">
+          <img src={userProfile} className="size-8" alt="" />
+        </div>
         <input
           type="text"
           placeholder="Write a comment..."

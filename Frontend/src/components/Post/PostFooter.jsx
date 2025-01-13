@@ -11,55 +11,62 @@ import CommentSection from "./Comment";
 import ShareBtn from "./ShareBtn";
 import AddComment from "./AddComment";
 
+
 const commentsData = [
   {
     name: "John Doe",
     time: "2h ago",
     comment: "This is the first comment.",
+    likes:10,
     replies: [
-      { name: "Jane Doe", comment: "Thanks for sharing!" },
-      { name: "Mike Ross", comment: "Very insightful." },
-      { name: "Bob Brown", comment: "Me too!" },
-      { name: "Charlie Black", comment: "Great point!" },
+      { name: "Jane Doe", comment: "Thanks for sharing!" ,likes:3},
+      { name: "Mike Ross", comment: "Very insightful.",likes:0 },
+      { name: "Bob Brown", comment: "Me too!",likes:0 },
+      { name: "Charlie Black", comment: "Great point!",likes:0 },
       
     ],
   },
   {
     name: "Alice Smith",
     time: "1h ago",
+    likes:70,
     comment: "I totally agree with this.",
     replies: [
-      { name: "Bob Brown", comment: "Me too!" },
-      { name: "Charlie Black", comment: "Great point!" },
+      { name: "Bob Brown", comment: "Me too!" ,likes:1},
+      { name: "Charlie Black", comment: "Great point!" ,likes:1},
     ],
   },
   {
     name: "Chris Green",
     time: "3h ago",
+    likes:10,
     comment: "Can you provide more details?",
     replies: [],
   },
   {
     name: "Chris Green",
     time: "3h ago",
+    likes:15,
     comment: "Can you provide more details?",
     replies: [],
   },
   {
     name: "Chris Green",
     time: "3h ago",
+    likes:17,
     comment: "Can you provide more details?",
     replies: [],
   },
   {
     name: "Chris Green",
     time: "3h ago",
+    likes:0,
     comment: "Can you provide more details?",
     replies: [],
   },
 ];
 
-function PostFooter() {
+function PostFooter({ likes = 0, comments = [] ,}) {
   const [showComments, setShowComments] = useState(false);
   const [visibleCount, setVisibleCount] = useState(3);
 
@@ -72,7 +79,7 @@ function PostFooter() {
         <article className="w-96 p-0 bg-white dark:bg-gray-900 dark:text-gray-100">
           {/* Footer Section */}
           <div className="flex justify-between px-4 py-2 border-t border-gray-300 dark:border-gray-700">
-            <LikeBtn />
+            <LikeBtn likeCount={likes} />
             <CommentBtn
               showComments={showComments}
               setShowComments={setShowComments}
@@ -90,7 +97,7 @@ function PostFooter() {
                   <Comment key={index} data={comment} />
                 ))} */}
 
-                <CommentSection comments={commentsData} />
+                <CommentSection comments={comments} />
 
                 {/* Add Comment */}
                 <AddComment />

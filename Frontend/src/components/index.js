@@ -1,7 +1,7 @@
 import Login from "./Login/Login";
 import Signup from "./Login/Signup";
 import MenuBtn from "./side-menu/MenuBtn";
-import PostHeader from "./Post/PoatHeader";
+import PostHeader from "./Post/PostHeader";
 import PostContent from "./Post/PostContent";
 import PostFooter from "./Post/PostFooter";
 import LikeBtn from "./Post/LikeBtn";
@@ -13,7 +13,7 @@ import Logo from "./Header/Logo";
 import ThemeBtn from "./Header/ThemeBtn";
 import Search from "./Header/Search";
 import ChatBtn from "./Header/Chat/ChatBtn";
-import Chatter from "./Header/Chat/Chatter";
+import UserChatPreview from "./Header/Chat/UserChatPreview";
 import ChatSearch from "./Header/Chat/ChatSearch";
 import Header from "./Header/Header";
 import Chat from "./Header/Chat/Chat";
@@ -27,7 +27,7 @@ export {
     Signup,
     Search,
     ChatBtn,
-    Chatter,
+    UserChatPreview,
     ChatSearch,
     Header,
     Chat,

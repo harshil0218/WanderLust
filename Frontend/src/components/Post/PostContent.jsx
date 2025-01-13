@@ -1,25 +1,14 @@
 import React from "react";
 
-function PostContent() {
-  const images = [
-    "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    "https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-    "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    "https://images.pexels.com/photos/29947080/pexels-photo-29947080/free-photo-of-tranquil-coastal-road-with-ocean-view.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-  ];
-
+function PostContent({ caption = "", images = [] }) {
+  
   return (
     <>
       <div className="flex justify-center ">
         <article className="w-96 h-auto p-0 border-gray-300 bg-white dark:bg-gray-900 dark:text-gray-100">
           <div className="p-4">
             <p className="mt-2 text-sm text-gray-800 dark:text-gray-200">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Recusandae dolores, possimus pariatur animi temporibus nesciunt
-              praesentium dolore sed nulla ipsum eveniet corporis quidem,
-              mollitia itaque minus soluta, voluptates neque explicabo tempora
-              nisi culpa eius atque dignissimos. Molestias explicabo corporis
-              voluptatem?
+              {caption}
             </p>
           </div>
 
@@ -78,6 +67,32 @@ function PostContent() {
                     className="w-full h-32 object-cover rounded-xl"
                   />
                 ))}
+              </div>
+            )}
+
+            {/* More than 5 Images */}
+            {images.length > 4 && (
+              <div className="grid grid-cols-2 gap-1">
+                {images.slice(0, 3).map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Post ${index }`}
+                    className="w-full h-32 object-cover rounded-xl"
+                  />
+                ))}
+                <div className="relative w-full h-32">
+                  <img
+                    src={images[3]}
+                    alt="Post 5"
+                    className="w-full h-32 object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-xl">
+                    <p className="text-white font-bold text-lg">
+                      +{images.length - 4} more
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
           </div>

@@ -2,63 +2,22 @@ import { React, useState } from "react";
 import LikeBtn from "./LikeBtn";
 import AddComment from "./AddComment";
 
-// function Comment({ data, isReply = false }) {
-//   const [showReplies, setShowReplies] = useState(false);
-//   return (
-//     <div className={`space-y-2 ${isReply ? "ml-8" : ""}`}>
-//       <div className="flex items-start space-x-3">
-//         <div className="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-full dark:bg-gray-700"></div>
-//         <div className="flex-1">
-//           <div className="flex justify-between items-center">
-//             <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
-//               {data.name}
-//             </span>
-//             {data.time && (
-//               <span className="text-xs text-gray-500 dark:text-gray-400">
-//                 {data.time}
-//               </span>
-//             )}
-//           </div>
-//           <p className="text-sm text-gray-700 dark:text-gray-300">
-//             {data.comment}
-//           </p>
-//           <div className="flex space-x-4 mt-1">
-//             <LikeBtn />
-//             {data.replies && data.replies.length > 0 && (
-//               <button
-//                 onClick={() => setShowReplies(!showReplies)}
-//                 className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400"
-//               >
-//                 {showReplies ? "Hide Replies" : "Reply"}
-//               </button>
-//             )}
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Replies */}
-//       {showReplies &&
-//         data.replies &&
-//         data.replies.map((reply, index) => (
-//           <Comment key={index} data={reply} isReply={true} />
-//         ))}
-//     </div>
-//   );
-// }
 
 function Comment({ data, isReply = false }) {
   const [showReplies, setShowReplies] = useState(false);
   const [visibleReplies, setVisibleReplies] = useState(3);
-
   const handleLoadMoreReplies = () => {
     setVisibleReplies((prevCount) => prevCount + 10);
   };
+  const commenterProfile = "https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
 
   return (
     <div className={`space-y-2 ${isReply ? "ml-8" : ""}`}>
       {/* Main Comment */}
       <div className="flex items-start space-x-3">
-        <div className="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-full dark:bg-gray-700"></div>
+        <div className="flex-shrink-0 w-8 h-8 bg-gray-300 rounded-full dark:bg-gray-700">
+          <img src={commenterProfile} alt="" className="size-8 rounded-full" />
+        </div>
         <div className="flex-1">
           <div className="flex justify-between items-center">
             <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -74,7 +33,7 @@ function Comment({ data, isReply = false }) {
             {data.comment}
           </p>
           <div className="flex space-x-4 mt-1">
-            <LikeBtn />
+            <LikeBtn likeCount={data.likes}/>
             {data.replies && data.replies.length > 0 && (
               <button
                 onClick={() => setShowReplies(!showReplies)}
@@ -110,6 +69,8 @@ function Comment({ data, isReply = false }) {
 }
 
 function CommentSection({ comments }) {
+  console.log("in comment section");
+  
   const [visibleComments, setVisibleComments] = useState(3);
 
   const handleLoadMoreComments = () => {
@@ -118,7 +79,10 @@ function CommentSection({ comments }) {
 
   return (
     <div className="space-y-4">
+      console.log(comment);
+      
       {comments.slice(0, visibleComments).map((comment, index) => (
+        
         <Comment key={index} data={comment} />
       ))}
 

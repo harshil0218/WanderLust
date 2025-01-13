@@ -5,7 +5,8 @@ import "regenerator-runtime/runtime";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Chat from "./components/Header/Chat/Chat";
 import Profile from "./components/profile/Profile";
-import { Post, Signup,Login, OtpBox ,Forgot,ResetPassword, AddPost,SideMenu} from "./components";
+import { Post, Signup,Login, OtpBox ,Forgot,ResetPassword, AddPost,SideMenu, PostHeader, PostContent, PostFooter, UserChatPreview} from "./components";
+import ChatSidebar from "./components/Header/Chat/ChatSidebar";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,7 +28,9 @@ function App() {
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
       <QueryClientProvider client={queryClient}>
       <ThemeBtn />
-      <ResetPassword /> {/* Your SignUp component */}
+      <ChatSidebar /> 
+      {/* <PostContent/>
+      <PostFooter/> */}
     </QueryClientProvider>
        
       
