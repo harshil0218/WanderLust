@@ -16,26 +16,54 @@ function ThemeBtn() {
     }
   };
   return (
-    <div className="flex items-center space-x-1">
-      {isDark ? ( <LightModeOutlinedIcon className="text-gray-800 dark:text-gray-200" />):(<LightModeIcon className="text-gray-800 dark:text-gray-200" />) }
+    // <div className="flex items-center space-x-1">
+    //   {isDark ? ( <LightModeOutlinedIcon className="text-gray-800 dark:text-gray-200" />):(<LightModeIcon className="text-gray-800 dark:text-gray-200" />) }
       
 
-      <label
-        htmlFor="AcceptConditions"
-        className="relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-blue-500"
-      >
-        <input
-          type="checkbox"
-          id="AcceptConditions"
-          className="peer sr-only"
-          onChange={onChangeBtn}
-          checked={themeMode === "dark"}
-        />
-        <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6"></span>
-      </label>
-      {isDark ? (<Brightness3Icon className="text-gray-800 dark:text-gray-200 rotate-[25deg]"/>):(<Brightness3OutlinedIcon className="text-gray-800 dark:text-gray-200 rotate-[25deg]" />)}
+    //   <label
+    //     htmlFor="AcceptConditions"
+    //     className="relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-blue-500"
+    //   >
+    //     <input
+    //       type="checkbox"
+    //       id="AcceptConditions"
+    //       className="peer sr-only"
+    //       onChange={onChangeBtn}
+    //       checked={themeMode === "dark"}
+    //     />
+    //     <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6"></span>
+    //   </label>
+    //   {isDark ? (<Brightness3Icon className="text-gray-800 dark:text-gray-200 rotate-[25deg]"/>):(<Brightness3OutlinedIcon className="text-gray-800 dark:text-gray-200 rotate-[25deg]" />)}
       
-    </div>
+    // </div>
+
+    <div className="flex items-center space-x-1 sm:space-x-4 sm:p-4 p-2">
+  {isDark ? (
+    <LightModeOutlinedIcon className="text-gray-800 dark:text-gray-200" />
+  ) : (
+    <LightModeIcon className="text-gray-800 dark:text-gray-200" />
+  )}
+  <label
+    htmlFor="AcceptConditions"
+    className="relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition has-[:checked]:bg-blue-500"
+  >
+    <input
+      type="checkbox"
+      id="AcceptConditions"
+      className="peer sr-only"
+      onChange={onChangeBtn}
+      checked={themeMode === "dark"}
+    />
+    <span className="absolute inset-y-0 start-0 m-1 w-6 h-6 rounded-full bg-white transition-all peer-checked:start-6"></span>
+  </label>
+  {isDark ? (
+    <Brightness3Icon className="text-gray-800 dark:text-gray-200 rotate-[25deg]" />
+  ) : (
+    <Brightness3OutlinedIcon className="text-gray-800 dark:text-gray-200 rotate-[25deg]" />
+  )}
+</div>
+
+
   );
 }
 

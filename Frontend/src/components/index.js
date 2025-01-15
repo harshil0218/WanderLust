@@ -1,6 +1,6 @@
 import Login from "./Login/Login";
 import Signup from "./Login/Signup";
-import MenuBtn from "./side-menu/MenuBtn";
+import ChatSidebar from "./Header/Chat/ChatSidebar";
 import PostHeader from "./Post/PostHeader";
 import PostContent from "./Post/PostContent";
 import PostFooter from "./Post/PostFooter";
@@ -16,7 +16,7 @@ import ChatBtn from "./Header/Chat/ChatBtn";
 import UserChatPreview from "./Header/Chat/UserChatPreview";
 import ChatSearch from "./Header/Chat/ChatSearch";
 import Header from "./Header/Header";
-import Chat from "./Header/Chat/Chat";
+import MessageArea from "./Header/Chat/MessageArea";
 import Post from "./Post/Post";
 import OtpBox from "./Login/OtpBox";
 import Forgot from "./Login/Forgot";
@@ -30,8 +30,8 @@ export {
     UserChatPreview,
     ChatSearch,
     Header,
-    Chat,
-    MenuBtn,
+    MessageArea,
+    ChatSidebar,
     PostContent,
     PostHeader,
     PostFooter,

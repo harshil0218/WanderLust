@@ -5,7 +5,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 function ChatSearch() {
     const [search, setSearch] = useState("");
   return (
-    <form class="flex items-center max-w-sm mx-auto ">
+    <form class="flex items-center sticky top-0 ">
       <label for="voice-search" class="sr-only">
         Search
       </label>

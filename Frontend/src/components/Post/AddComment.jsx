@@ -1,6 +1,7 @@
 import React from "react";
 import SendIcon from "@mui/icons-material/Send";
-function AddComment({userId,userProfile}) {
+function AddComment({userId,userProfile='https://images.pexels.com/photos/29702314/pexels-photo-29702314/free-photo-of-woman-in-polka-dot-dress-with-cat-in-lush-green-field.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+}) {
   return (
     <>
       <div className="flex items-center space-x-3">

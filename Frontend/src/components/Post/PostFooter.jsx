@@ -97,7 +97,7 @@ function PostFooter({ likes = 0, comments = [] ,}) {
                   <Comment key={index} data={comment} />
                 ))} */}
 
-                <CommentSection comments={comments} />
+                <CommentSection comments={commentsData} />
 
                 {/* Add Comment */}
                 <AddComment />

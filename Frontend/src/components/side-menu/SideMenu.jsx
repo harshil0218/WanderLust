@@ -1,5 +1,9 @@
 import React from "react";
-import MenuBtn from "./MenuBtn";
+
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 function SideMenu() {
   // return (
   //   <aside
@@ -18,79 +22,122 @@ function SideMenu() {
   //   </aside>
   // );
   return (
+    // <aside>
+    //   {/* Large Devices - Left Sidebar */}
+    //   <div className="hidden lg:flex z-40 h-screen  bg-gray-100 dark:bg-gray-800 shadow-lg">
+    //     <div className="h-full mx-3 py-2 flex flex-col">
+
+    //       <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <HomeOutlinedIcon fontSize="medium" className="mr-3" />
+    //         <span>Home</span>
+    //       </button>
+
+    //       <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <ChatOutlinedIcon fontSize="medium" className="mr-3" />
+    //         <span>Messages</span>
+    //       </button>
+
+    //       <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <AccountCircleOutlinedIcon fontSize="medium" className="mr-3" />
+    //         <span>Profile</span>
+    //       </button>
+
+    //       <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <SettingsOutlinedIcon fontSize="medium" className="mr-3" />
+    //         <span>Settings</span>
+    //       </button>
+
+    //       <div className="mt-80 bottom-0 text-center text-gray-500 dark:text-gray-400 text-sm hover:text-gray-800 dark:hover:text-gray-200 hover:cursor-pointer">
+    //         © 2025 TravelMate. All Rights Reserved.
+    //       </div>
+    //     </div>
+    //   </div>
+    //   {/* Small & Medium Devices - Bottom Navbar */}
+    //   <div className="lg:hidden fixed bottom-0 left-0 z-40 w-full bg-gray-100 dark:bg-gray-800">
+    //     <div className="flex justify-evenly px-4 py-1 w-full">
+    //       <button className="flex items-center py-3 px-4 rounded-lg  text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <HomeOutlinedIcon fontSize="large" c />
+    //       </button>
+
+    //       <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <ChatOutlinedIcon fontSize="large" />
+    //       </button>
+
+    //       <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <AccountCircleOutlinedIcon fontSize="large" />
+    //       </button>
+
+    //       <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    //         <SettingsOutlinedIcon fontSize="large" />
+    //       </button>
+    //     </div>
+    //   </div>
+
+    // </aside>
+
     <aside>
+      
       {/* Large Devices - Left Sidebar */}
-      <div className="hidden lg:flex fixed top-0 left-0 z-40 w-auto h-screen bg-gray-100 dark:bg-gray-800">
-        <div className="h-full  mx-6 py-4 overflow-y-auto">
-          <ul className="space-y-4 ">
-            <li>
-              <MenuBtn
-                icon={
-                  <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                }
-                label="Dashboard"
-              />
-            </li>
-            <li>
-              <MenuBtn
-                icon={
-                  <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                }
-                label="Reports"
-              />
-            </li>
-            <li>
-              <MenuBtn
-                icon={
-                  <path d="M8 1l8 8-8 8V1Z" />
-                }
-                label="Settings"
-              />
-            </li>
-            <li>
-              <MenuBtn
-                icon={
-                  <path d="M6 2h4v4H6zm0 8h4v4H6z" />
-                }
-                label="Support"
-              />
-            </li>
-          </ul>
+      <div className="hidden lg:flex z-40 flex-l h-screen bg-gray-100 dark:bg-gray-800 shadow-lg">
+        
+        <div className="h-full mx-3 py-2 flex flex-col">
+          
+          {/* Navigation Buttons */}
+          <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <HomeOutlinedIcon fontSize="medium" className="mr-3" />
+            <span>Home</span>
+          </button>
+          <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <ChatOutlinedIcon fontSize="medium" className="mr-3" />
+            <span>Messages</span>
+          </button>
+          <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <AccountCircleOutlinedIcon
+              fontSize="medium"
+              className="mr-3"
+            />
+            <span>Profile</span>
+          </button>
+          <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <SettingsOutlinedIcon fontSize="medium" className="mr-3" />
+            <span>Settings</span>
+          </button>
+          {/* Footer */}
+          <div className=" text-center text-gray-500 dark:text-gray-400 text-sm hover:text-gray-800 dark:hover:text-gray-200 cursor-pointer">
+            
+            © 2025 TravelMate. All Rights Reserved.
+          </div>
         </div>
       </div>
-
       {/* Small & Medium Devices - Bottom Navbar */}
       <div className="lg:hidden fixed bottom-0 left-0 z-40 w-full bg-gray-100 dark:bg-gray-800">
-        <div className="flex justify-between px-4 py-3 w-full">
-          <MenuBtn 
-            icon={
-              <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-            }
-            label="Dashboard"
-          />
-          <MenuBtn
-            icon={
-              <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-            }
-            label="Reports"
-          />
-          <MenuBtn
-            icon={
-              <path d="M8 1l8 8-8 8V1Z" />
-            }
-            label="Settings"
-          />
-          <MenuBtn
-            icon={
-              <path d="M6 2h4v4H6zm0 8h4v4H6z" />
-            }
-            label="Support"
-          />
+        
+        <div className="flex justify-evenly px-4 py-1 w-full">
+          
+          <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <HomeOutlinedIcon fontSize="large" />
+          </button>
+          <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <ChatOutlinedIcon fontSize="large" />
+          </button>
+          <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <AccountCircleOutlinedIcon fontSize="large" />
+          </button>
+          <button className="flex items-center py-3 px-4 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            
+            <SettingsOutlinedIcon fontSize="large" />
+          </button>
         </div>
       </div>
     </aside>
   );
-
 }
 
 export default SideMenu;

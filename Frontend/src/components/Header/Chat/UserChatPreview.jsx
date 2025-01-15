@@ -7,7 +7,6 @@ const UserChatPreview = ({
   lastMessageTime,
   unreadCount,
   onClick,
-  isDarkMode,
 }) => {
   return (
     // <div
@@ -46,7 +45,7 @@ const UserChatPreview = ({
 
     <div
       onClick={onClick}
-      className={`flex items-center p-3 rounded-lg cursor-pointer hover:bg-opacity-80 
+      className={`flex  items-center p-3 rounded-lg cursor-pointer hover:bg-opacity-80 
          dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 bg-white text-black hover:bg-gray-100
       `}
     >
