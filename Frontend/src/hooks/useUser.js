@@ -10,8 +10,8 @@ export const useFetchUser = (userId) => {
 };
 
 // Update user profile using React Query Mutation
-export const useUpdateUserProfile = () => {
-  return useMutation(updateUserProfile, {
+export const useUpdateUserProfile = (userId,userData) => {
+  return useMutation(() => updateUserProfile(userId,userData), {
     onSuccess: () => {
       console.log("User profile updated successfully");
     },
@@ -19,13 +19,23 @@ export const useUpdateUserProfile = () => {
       console.error("Error updating user profile:", error.message);
     },
   });
-};
+}
 
 // Hook to fetch all users
 export const useFetchAllUsers = () => useQuery("allUsers", fetchAllUsers);
 
 // Hook to fetch specific user fields
-export const useFetchUserFields = () => useQuery("userFields", fetchUserFields);
+export const useFetchUserFields = (userId) => useQuery(["userFields", userId], () => fetchUserFields(userId));
 
 // Hook to delete a user
-export const useDeleteUser = () => useMutation(deleteUser);
+export const useDeleteUser = (userId) => {
+  return useMutation(() => deleteUser(userId), {
+    onSuccess: () => {
+      console.log("User deleted successfully");
+    },
+    onError: (error) => {
+      console.error("Error deleting user:", error.message);
+    },
+  });
+}
+

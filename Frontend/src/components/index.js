@@ -22,7 +22,9 @@ import OtpBox from "./Login/OtpBox";
 import Forgot from "./Login/Forgot";
 import ResetPassword from "./Login/ResetPassword";
 import AddPost from "./Post/AddPost";
+import ProfileCmpt from "./profile/ProfileCmpt";
 export {
+    ProfileCmpt,
     Login,
     Signup,
     Search,

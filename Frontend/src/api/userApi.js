@@ -43,7 +43,7 @@ export const fetchAllUsers = async () => {
   };
   
   // Fetch specific fields for users (userName, profilePicture, bio)
-  export const fetchUserFields = async () => {
+  export const fetchUserFields = async (userId) => {
     const response = await fetch(`${API_BASE_URL}?fields=userName,profilePicture,bio`, {
       method: "GET",
     });

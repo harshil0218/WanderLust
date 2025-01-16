@@ -18,7 +18,7 @@ function Header() {
     //     <ThemeBtn  />
     //   </div>
     // </header>
-        <header className="flex items-center justify-between p-2 bg-white dark:bg-gray-800 shadow-md">
+        <header className="flex items-center justify-between p-2  bg-white dark:bg-gray-800 shadow-md">
       <div className="flex items-center space-x-2">
         <Logo />
       </div>

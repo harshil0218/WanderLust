@@ -7,7 +7,12 @@ import {
   deleteChat,
 } from "../api/chatApi";
 
-export const useFetchChats = () => useQuery("chats", fetchChats);
+export const useFetchChats = (userId) => {
+  return useQuery(["chats", userId], () => fetchChats(userId), {
+    enabled: !!userId,
+    staleTime: 300000,
+  });
+}
 
 export const useFetchChatMessages = (chatId) =>
   useQuery(["messages", chatId], () => fetchChatMessages(chatId));
