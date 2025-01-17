@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import PoatHeader from "./PostHeader";
+import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
 import PostFooter from "./PostFooter";
 import { useFetchPosts } from "../../hooks/usePost";
@@ -384,7 +384,7 @@ function Post() {
           trialPosts.map((post) => (
             <div key={post.id} className=" ">
               <article className="w-96 z-10 p-0 bg-white dark:bg-gray-900 dark:text-gray-100">
-                <PoatHeader
+                <PostHeader
                   userName={post.name}
                   bio={post.bio}
                   location={post.location}

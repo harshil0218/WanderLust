@@ -23,7 +23,11 @@ import Forgot from "./Login/Forgot";
 import ResetPassword from "./Login/ResetPassword";
 import AddPost from "./Post/AddPost";
 import ProfileCmpt from "./profile/ProfileCmpt";
+import Posttab from "./Post/Posttab";
+import PhotoGallery from "./profile/PhotoGallery";
 export {
+    PhotoGallery,
+    Posttab,
     ProfileCmpt,
     Login,
     Signup,

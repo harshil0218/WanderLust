@@ -1,3 +1,5 @@
 import Home from "./Home";
 import Chat from "./Chat";
-export { Home, Chat };
+import Profile from "./Profile";
+import CreatePost from "./CreatePost";
+export { Home, Chat ,Profile, CreatePost};

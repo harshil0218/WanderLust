@@ -79,8 +79,7 @@ function CommentSection({ comments }) {
 
   return (
     <div className="space-y-4">
-      console.log(comment);
-      
+     
       {comments.slice(0, visibleComments).map((comment, index) => (
         
         <Comment key={index} data={comment} />

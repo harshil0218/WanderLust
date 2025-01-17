@@ -1,7 +1,7 @@
 import { use } from "react";
 import { React, useState } from "react";
 
-function PoatHeader({
+function PostHeader({
   userName = "",
   bio = "",
   location = "",
@@ -97,4 +97,4 @@ function PoatHeader({
   );
 }
 
-export default PoatHeader;
+export default PostHeader;

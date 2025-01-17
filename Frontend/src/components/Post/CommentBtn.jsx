@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
-function CommentBtn({showComments, setShowComments}) {
+function CommentBtn({showComments, setShowComments,commentCount=''}) {
     // const [showComments, setShowComments] = useState(false);
-    const [commentCount, setCommentCount] = useState(0);
+   
   return (
     <button
       onClick={() => setShowComments(!showComments)}

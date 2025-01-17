@@ -83,6 +83,7 @@ function PostFooter({ likes = 0, comments = [] ,}) {
             <CommentBtn
               showComments={showComments}
               setShowComments={setShowComments}
+              commentCount={commentsData.length}
             />
             <ShareBtn />
           </div>
