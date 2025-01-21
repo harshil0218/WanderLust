@@ -398,7 +398,6 @@ const photoLinks = [
   'https://images.pexels.com/photos/1816225/pexels-photo-1816225.jpeg?auto=compress&cs=tinysrgb&w=600'
   // Add more links as needed
 ];
-
 function ProfileCmpt() {
   const [postTab, setPostTab] = useState(true);
   const [savedTab, setSavedTab] = useState(false);

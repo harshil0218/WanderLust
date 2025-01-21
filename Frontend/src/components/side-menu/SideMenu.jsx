@@ -1,10 +1,12 @@
-import React from "react";
+import {React,useState} from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+
 function SideMenu() {
+  
   return (
     <aside>
       {/* Large Devices - Left Sidebar */}
@@ -19,7 +21,8 @@ function SideMenu() {
             <ChatOutlinedIcon fontSize="medium" className="mr-3" />
             <span>Messages</span>
           </button>
-          <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+          <button className="flex items-center w-full py-4 px-3 my-2 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
             <AddCircleOutlineIcon fontSize="medium" className="mr-3" />
             <span>Create Post</span>
           </button>
@@ -36,6 +39,7 @@ function SideMenu() {
             © 2025 TravelMate. All Rights Reserved.
           </div>
         </div>
+        
       </div>
       {/* Small & Medium Devices - Bottom Navbar */}
       <div>

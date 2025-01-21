@@ -120,7 +120,7 @@ function ChatSidebar({ userIds = [],onChatClick }) {
           setIsError(true);
           setIsLoading(false);
         }
-      }, 1500); // Simulated delay
+      },); // Simulated delay
     };
 
     fetchChats();

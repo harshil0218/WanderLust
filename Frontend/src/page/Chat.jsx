@@ -106,7 +106,7 @@ function useFetchChatMessages(userId) {
 
     setTimeout(() => {
       resolve(conversations); // Return mock data
-    }, 1000); // Simulate API delay
+    }, 500); // Simulate API delay
   });
 }
 function Chat() {

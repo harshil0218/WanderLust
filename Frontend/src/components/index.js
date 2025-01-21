@@ -25,7 +25,11 @@ import AddPost from "./Post/AddPost";
 import ProfileCmpt from "./profile/ProfileCmpt";
 import Posttab from "./Post/Posttab";
 import PhotoGallery from "./profile/PhotoGallery";
+import SettingCmpt from "./Settings/SettingCmpt";
+import Layout from "./Layout";
 export {
+    Layout,
+    SettingCmpt,
     PhotoGallery,
     Posttab,
     ProfileCmpt,
