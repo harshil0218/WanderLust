@@ -1,10 +1,12 @@
 import { React, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-function Login() {
+import { useNavigate } from "react-router-dom";
+function Login({ onSignup, onForgotPassword }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   // React Query Mutation for login
   // const loginMutation = useMutation(
@@ -35,6 +37,7 @@ function Login() {
   // );
 
   // Mock API call
+
   const mockLoginApi = async (credentials) => {
     // Mimic API delay using setTimeout
     return new Promise((resolve, reject) => {
@@ -67,8 +70,9 @@ function Login() {
     try {
       const response = await mockLoginApi({ email, password });
       // Save the mock token (you can use localStorage or cookies here)
+
+      navigate("/home");
       localStorage.setItem("token", response.token);
-      alert("Login successful! Mock token stored.");
     } catch (error) {
       setError(error.message);
     } finally {
@@ -77,8 +81,8 @@ function Login() {
   };
 
   return (
-    <div className="justify-center items-center content-center flex h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="w-full max-w-sm place-content-center content-center rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
+    <div className="justify-center   items-center content-center flex bg-gray-100/30 dark:bg-gray-800/30">
+      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg  bg-gray-100/30  sm:p-6 md:p-8  dark:bg-gray-800/30">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
             Sign in
@@ -146,12 +150,12 @@ function Login() {
                 Remember me
               </label>
             </div>
-            <a
-              href="#"
+            <button
+              onClick={onForgotPassword}
               class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
             >
               Forgot Password?
-            </a>
+            </button>
           </div>
 
           {/* Login Button */}
@@ -164,21 +168,67 @@ function Login() {
           </button>
 
           {/* Signup Redirect */}
-          <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+          <div className="text-sm font-medium text-gray-800 dark:text-gray-300">
             Not registered?{" "}
-            <a
-              href="#"
+            <button
+              onClick={onSignup}
               className="text-blue-700 hover:underline dark:text-blue-500"
             >
               Create account
-            </a>
+            </button>
           </div>
         </form>
+
+        <fieldset class="border-t border-slate-500 dark:border-slate-600 my-3">
+          <legend class="mx-auto px-4 text-gray-900 dark:text-gray-400 text-md italic">
+            or continue with
+          </legend>
+        </fieldset>
+
+        <button
+          type="submit"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+        >
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/50/google-logo.png"
+            alt="google-logo"
+            className="flex-shrink-0"
+          />
+          <span className="flex-1 text-center">Google</span>
+        </button>
+
+        <button
+          type="submit"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+        >
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/50/facebook-new.png"
+            alt="facebook-new"
+            className="flex-shrink-0"
+          />
+          <span className="flex-1 text-center">Facebook</span>
+        </button>
+
+        <button
+          type="submit"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+        >
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/material-rounded/24/github.png"
+            alt="github"
+            className="flex-shrink-0"
+          />
+          <span className="flex-1 text-center">GitHub</span>
+        </button>
       </div>
     </div>
   );
 }
 
 export default Login;
-
-

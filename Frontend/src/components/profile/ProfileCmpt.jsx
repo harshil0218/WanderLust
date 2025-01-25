@@ -532,7 +532,7 @@ function ProfileCmpt() {
       </div>
       {/* Tabs Section */}
       <div className="flex justify-around mt-6 border-t border-gray-200 dark:border-gray-700">
-        <button className="flex flex-col items-center py-2 text-gray-900   dark:text-gray-200  hover:text-indigo-500 dark:hover:text-indigo-300  border-b-2 border-indigo-500 focus:outline-none"               
+        <button className="flex flex-col items-center py-2 text-gray-900   dark:text-gray-200  hover:text-indigo-500 dark:hover:text-indigo-300   border-indigo-500 focus:outline-none"               
                 onClick={() => {setPostTab(true); setSavedTab(false); setPhotoTab(false);}}
                 >
                 <svg

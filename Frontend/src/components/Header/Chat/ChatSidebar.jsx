@@ -130,61 +130,13 @@ function ChatSidebar({ userIds = [],onChatClick }) {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error occured</div>;
   return (
-    // <div className="flex h-screen  flex-col ">
-    //   <div className="flex-1 overflow-hidden">
-    //     <div className="flex-col overflow-y-auto no-scrollbar p-4 shrink-0 h-full dark:bg-gray-900 bg-gray-50 w-full">
-    //       <div className="p-4 w-full dark:bg-gray-900 bg-gray-50 sticky top-0 left-0 right-0">
-    //         <ChatSearch className=" p-3" />
-    //       </div>
-    //       <div className="space-y-3 overflow-y-auto flex-1">
-    //         {users &&
-    //           users.map((user) => (
-    //             <UserChatPreview
-    //               key={user.id}
-    //               profilePicture={user.profilePicture}
-    //               userName={user.name}
-    //               lastMessage={user.lastMessage}
-    //               lastMessageTime={user.lastMessageTime}
-    //               unreadCount={user.unreadCount}
-    //               onClick={() => onChatClick(user.id)}
-    //             />
-    //           ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-
-    // <div className="flex h-screen flex-col">
-    //   <div className="flex-1 overflow-hidden">
-    //     <div className="flex-col overflow-y-auto no-scrollbar p-4 h-full dark:bg-gray-900 bg-gray-50 w-full">
-    //       {/* Sticky Search Bar */}
-    //       <div className="p-4 w-full dark:bg-gray-900 bg-gray-50 sticky top-0 left-0 right-0">
-    //         <ChatSearch className="p-3" />
-    //       </div>
-    //       {/* User Chat Previews */}
-    //       <div className="space-y-3 overflow-y-auto flex-1">
-    //         {users &&
-    //           users.map((user) => (
-    //             <UserChatPreview
-    //               key={user.id}
-    //               profilePicture={user.profilePicture}
-    //               userName={user.name}
-    //               lastMessage={user.lastMessage}
-    //               lastMessageTime={user.lastMessageTime}
-    //               unreadCount={user.unreadCount}
-    //               onClick={() => onChatClick(user.id)}
-    //             />
-    //           ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+ 
 
     <div className="flex h-screen flex-col">
       <div className="flex-1 overflow-hidden">
         <div className="flex flex-col overflow-y-auto no-scrollbar p-4 h-full dark:bg-gray-900 bg-gray-50 w-full">
           {/* Sticky Search Bar */}
-          <div className="pb-4 w-full dark:bg-gray-900 bg-gray-50 sticky top-0 left-0 right-0 z-10">
+          <div className="p-4 w-full dark:bg-gray-900 bg-gray-50 sticky top-0 left-0 right-0 z-10">
             <ChatSearch className="p-0" />
           </div>
           {/* User Chat Previews */}

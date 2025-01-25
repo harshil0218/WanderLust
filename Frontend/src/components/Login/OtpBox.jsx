@@ -26,7 +26,7 @@ import { useMutation } from "@tanstack/react-query";
 //   const data = await response.json();
 //   return data;
 // };
-function OtpBox() {
+function OtpBox({onBack, onVerify}) {
   const [otp, setOtp] = useState(Array(6).fill("")); // OTP state, an array to store individual digits
   const [otpTimeLeft, setOtpTimeLeft] = useState(120); // OTP validity in seconds (2 minutes)
   const [resendTimeLeft, setResendTimeLeft] = useState(0); // Resend timer (5 minutes)
@@ -146,63 +146,74 @@ function OtpBox() {
   };
 
   return (
-    <div className="justify-center items-center content-center flex h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="w-full max-w-sm place-content-center content-center rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
+ 
+
+    <div className="justify-center  items-center content-center flex  bg-gray-100/30 dark:bg-gray-800/30">
+      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg  bg-gray-100/30 p-4 sm:p-6 md:p-8  dark:bg-gray-800/30">
         <form className="space-y-6" onSubmit={handleSubmit}>
-          <h5 className="text-xl font-medium text-gray-900 dark:text-white">
-            Enter OTP
-          </h5>
-          <p className="text-sm text-gray-500 dark:text-gray-300">
-            Please enter the 6-digit OTP sent to your email. OTP is valid for{" "}
-            <span className="font-medium text-blue-600 dark:text-blue-400">
-              {formatTime(otpTimeLeft)}
-            </span>
-            .
-          </p>
-
-          <div className="flex justify-between space-x-2">
-            {otp.map((digit, index) => (
-              <input
-                key={index}
-                id={`otp-input-${index}`}
-                type="text"
-                maxLength="1"
-                value={digit}
-                onChange={(e) => handleOtpChange(e.target.value, index)}
-                onKeyDown={(e) => handleKeyDown(e, index)}
-                className="w-12 h-12 text-center text-lg font-medium rounded-lg border border-gray-300 bg-gray-50 p-2 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
-              />
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between">
             <button
-              type="button"
-              className="text-sm text-blue-700 hover:underline dark:text-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
-              onClick={handleResendClick}
-              disabled={otpTimeLeft > 0 || resendTimeLeft > 0}
+                onClick={onBack}
+                className="focus:outline-none"
+                style={{ zIndex: 100 }}
             >
-              Resend OTP (
-              {resendTimeLeft > 0
-                ? formatTime(resendTimeLeft)
-                : otpTimeLeft > 0
-                ? formatTime(otpTimeLeft)
-                : "Ready"}
-              )
+                <span className="text-gray-700 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200">&larr; Back</span>
             </button>
-            <button
-              type="submit"
-              className="rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Verify OTP
-            </button>
-          </div>
+            <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                Enter OTP
+            </h5>
+            <p className="text-sm text-gray-800 dark:text-gray-300">
+                Please enter the 6-digit OTP sent to your email. OTP is valid for{" "}
+                <span className="font-medium text-blue-600 dark:text-blue-400">
+                    {formatTime(otpTimeLeft)}
+                </span>
+                .
+            </p>
+
+            <div className="flex justify-between space-x-2">
+                {otp.map((digit, index) => (
+                    <input
+                        key={index}
+                        id={`otp-input-${index}`}
+                        type="text"
+                        maxLength="1"
+                        value={digit}
+                        onChange={(e) => handleOtpChange(e.target.value, index)}
+                        onKeyDown={(e) => handleKeyDown(e, index)}
+                        className="w-12 h-12 text-center text-lg font-medium rounded-lg border border-gray-300 bg-gray-50 p-2 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+                    />
+                ))}
+            </div>
+
+            <div className="flex items-center justify-between">
+                <button
+                    type="button"
+                    className="text-sm text-blue-800 hover:underline dark:text-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                    onClick={handleResendClick}
+                    disabled={otpTimeLeft > 0 || resendTimeLeft > 0}
+                >
+                    Resend OTP (
+                    {resendTimeLeft > 0
+                        ? formatTime(resendTimeLeft)
+                        : otpTimeLeft > 0
+                        ? formatTime(otpTimeLeft)
+                        : "Ready"}
+                    )
+                </button>
+                <button
+                    onClick={onVerify}
+                    type="submit"
+                    className="rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                    Verify OTP
+                </button>
+            </div>
         </form>
         {message && (
-          <p className="mt-4 text-center text-sm text-gray-500">{message}</p>
+            <p className="mt-4 text-center text-sm text-gray-500">{message}</p>
         )}
-      </div>
     </div>
+</div>
+
   );
 }
 

@@ -1,58 +1,13 @@
-import {React,useState} from "react";
-import { useMutation } from "@tanstack/react-query"; // For handling API calls
-
-function Signup() {
+import { React, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+function Signup({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  // const navigate = useNavigate();
 
-  // API call to sign up user
-  // const signupUser = async (userData) => {
-  //   const response = await fetch("https://yourapi.com/signup", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(userData),
-  //   });
-    
-  //   if (!response.ok) {
-  //     throw new Error("Error signing up");
-  //   }
-    
-  //   return response.json();
-  // };
-
-  // Mock API call (replace with actual API once backend is ready)
-  const mockSignUpApi = async (credentials) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Mimic user registration success/failure
-        if (credentials.email === "test@example.com") {
-          reject(new Error("User already exists"));
-        } else if (credentials.password !== credentials.confirmPassword) {
-          reject(new Error("Passwords do not match"));
-        } else {
-          resolve({ message: "Registration successful" });
-        }
-      }, 1500); // Simulated delay
-    });
-  };
-
-  // API Call handler with react-query mutation
-  const mutation = useMutation(mockSignUpApi, {
-    onSuccess: (data) => {
-      setIsLoading(false);
-      alert(data.message); // Success action (like redirecting)
-      // Redirect to login page or home page
-    },
-    onError: (error) => {
-      setIsLoading(false);
-      setError(error.message); // Handle error message from API
-    },
-  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,14 +28,14 @@ function Signup() {
     }
 
     // Call the API using react-query mutation
+    navigate('/chat')
     mutation.mutate({ email, password, confirmPassword });
-
   };
 
   return (
-    <div className="justify-center items-center content-center flex h-screen bg-gray-100 dark:bg-gray-900">
-      <div className="w-full max-w-sm place-content-center content-center rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-6 md:p-8 dark:border-gray-700 dark:bg-gray-800">
-        <form className="space-y-6" onSubmit={handleSubmit}>
+    <div className="justify-center   items-center content-center flex  bg-gray-100/30 dark:bg-gray-800/30">
+      <div className=" place-content-center w-screen  md:w-[40vb] lg:w-[55vb] content-center rounded-lg  bg-gray-100/30 p-4 sm:p-6 md:p-8  dark:bg-gray-800/30">
+        <form className="space-y-4 " onSubmit={handleSubmit}>
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
             Sign Up
           </h5>
@@ -114,7 +69,7 @@ function Signup() {
               Password
             </label>
             <input
-              type="password"
+              type="text"
               name="password"
               id="password"
               placeholder="Password"
@@ -162,14 +117,61 @@ function Signup() {
           {/* Login Redirect */}
           <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
             Already have an account?{" "}
-            <a
-              href="#"
-              className="text-blue-700 hover:underline dark:text-blue-500"
+            <button
+              onClick={onLogin}
+              className="text-blue-700 hover:underline dark:text-blue-400"
             >
               Login
-            </a>
+            </button>
           </div>
         </form>
+        <fieldset class="border-t border-slate-500 dark:border-slate-600 my-3">
+          <legend class="mx-auto px-4 text-gray-900 dark:text-gray-400 text-md italic">
+            Sign up with
+          </legend>
+        </fieldset>
+
+        <button
+          type="submit"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+        >
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/50/google-logo.png"
+            alt="google-logo"
+            className="flex-shrink-0"
+          />
+          <span className="flex-1 text-center">Google</span>
+        </button>
+
+        <button
+          type="submit"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+        >
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/50/facebook-new.png"
+            alt="facebook-new"
+            className="flex-shrink-0"
+          />
+          <span className="flex-1 text-center">Facebook</span>
+        </button>
+
+        <button
+          type="submit"
+          className="w-full flex items-center my-2 rounded-lg bg-gray-200 px-5 py-2.5 text-md font-medium text-gray-800 dark:text-gray-200 hover:bg-blue-200 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-900"
+        >
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/material-rounded/24/github.png"
+            alt="github"
+            className="flex-shrink-0"
+          />
+          <span className="flex-1 text-center">GitHub</span>
+        </button>
       </div>
     </div>
   );

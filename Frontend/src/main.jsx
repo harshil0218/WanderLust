@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { useState, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -8,34 +8,34 @@ import {
   RouterProvider,
   Routes,
 } from "react-router-dom";
+import { ThemeProvider } from "./context/theme";
 import "./index.css";
-import App from "./App.jsx";
-import { ThemeProvider } from "./context/theme.js";
-import { Home, Chat, Setting,Profile } from "./page";
+import {Login,Signup,Forgot, OtpBox,ResetPassword} from "./components";
+import { Home, Chat, Setting, Profile, Auth,CreatePost } from "./page";
 
-import { ProfileCmpt,Login,Signup,Forgot,OtpBox,Layout} from "./components";
+import { Layout } from "./components";
+import App from "./App";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home />} />
+      <Route path="" element={<Auth />} />
       <Route path="home" element={<Home />} />
       <Route path="setting" element={<Setting />} />
       <Route path="chat" element={<Chat />} />
       <Route path="profile" element={<Profile />} />
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<Signup />} />
-      <Route path="forgotpassword" element={<Forgot />} />
-      <Route path="forgototp" element={<OtpBox />} />
+      <Route path="createpost" element={<CreatePost />} />
     </Route>
   )
 );
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-   
-    <RouterProvider router={router}>
-      <App/>
-    </RouterProvider>
-    
+    <ThemeProvider>
+      <RouterProvider router={router}>
+      <App />
+      </RouterProvider>
+    </ThemeProvider>
+     
     
   </StrictMode>
 );

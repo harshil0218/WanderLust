@@ -2,13 +2,15 @@ import React from "react";
 import chatIconLight from "../../../assets/chat1.svg";
 import chatIconDark from '../../../assets/chat2.svg';
 import useTheme from "../../../context/theme";
+import { useNavigate } from "react-router-dom";
 function ChatBtn({ messageCount }) {
   const { themeMode } = useTheme();
   const isDark = themeMode === "dark";
-  // dark:bg-gray-300 dark:hover:bg-gray-400 bg-gray-300 hover:bg-gray-400
+  const navigate = useNavigate();
   return (
     <div className="relative">
       <button
+        onClick={() => navigate("/chat")}
         className={`p-2 h-11 w-11 rounded-full shadow-lg dark:bg-gray-300 dark:hover:bg-gray-400 bg-gray-300 hover:bg-gray-400`}
       >
         <img

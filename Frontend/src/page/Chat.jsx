@@ -201,7 +201,7 @@ function Chat() {
         <Header />
       </header>
       <div className="flex-1 flex pt-16 pb-16">
-        <aside className="hidden lg:block p-4 no-scrollbar h-[95vh] bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+        <aside className=" no-scrollbar h-[95vh] bg-gray-100 dark:bg-gray-800 overflow-y-auto">
           <SideMenu />
         </aside>
         <div
@@ -229,10 +229,7 @@ function Chat() {
           )}
         </div>
       </div>
-      {/* Small & Medium Devices - Bottom Navbar */}
-      <div className="lg:hidden fixed bottom-0 left-0 z-40 w-full bg-gray-100 dark:bg-gray-800">
-        <SideMenu />
-      </div>
+      
     </div>
   );
 }

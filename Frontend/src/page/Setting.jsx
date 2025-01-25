@@ -8,7 +8,7 @@ function Setting() {
       </header>
 
       <div class="flex flex-1 ">
-        <aside class=" p-4 fixed bg-gray-100 dark:bg-gray-800 ">
+        <aside className=" no-scrollbar h-[95vh] bg-gray-100 dark:bg-gray-800 overflow-y-auto">
           <SideMenu />
         </aside>
 

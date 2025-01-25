@@ -24,7 +24,7 @@ function PhotoGallery({ photos }) {
       {photos.length > visiblePhotos && (
         <button
           onClick={showMorePhotos}
-          className="mt-4 w-full px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 focus:outline-none"
+          className="mt-4 w-full px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 focus:outline-none"
         >
           Show More Photos
         </button>
@@ -32,7 +32,7 @@ function PhotoGallery({ photos }) {
       {visiblePhotos > 6 && (
           <button
             onClick={showLessPhotos}
-            className="mt-4 w-full px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 focus:outline-none"
+            className="mt-4 w-full px-4 py-2 bg-gray-300 text-black rounded hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 focus:outline-none"
           >
             Show Less Photos
           </button>

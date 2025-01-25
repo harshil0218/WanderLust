@@ -8,10 +8,9 @@ function Home() {
       </header>
 
       <div class="flex flex-1 pt-16">
-        <aside class=" p-4 fixed bg-gray-100 dark:bg-gray-800 ">
+      <aside class=" p-4 fixed bg-gray-100 dark:bg-gray-800 ">
           <SideMenu />
         </aside>
-
         <main class="flex-1 p-0 justify-items-center rounded-lg  bg-white  dark:bg-gray-900">
           <div class="space-y-4">
             <div class="p-2 mb-2  rounded shadow-sm dark:bg-gray-900 bg-gray-50">
